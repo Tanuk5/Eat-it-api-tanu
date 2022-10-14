@@ -1,6 +1,6 @@
 import { exit } from "process";
-import { IEnv } from "./eat-it.types";
-import { IEnvironmentType } from "./eat-it.types";
+import { IEnv } from "./Eat-It.types";
+import { IEnvironmentType } from "./Eat-It.types";
 
 export const env = (): IEnv => {
   const _environment:IEnvironmentType = <IEnvironmentType>process.env?.ENVIRONMENT || 'development';

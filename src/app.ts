@@ -66,7 +66,7 @@ export class App {
     public mongoDB(uri: string) {
         const connect = () => {
             const options: mongoose.ConnectOptions = { keepAlive: true };
-            mongoose.connect(uri, options).then(() => {
+            mongoose.connect(uri).then(() => {
                 console.log('DB connected successfully');
             }).catch((error) => {
                 console.log("DB connection failed. \n", error);
