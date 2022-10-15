@@ -35,9 +35,9 @@ export class App {
         });
     }
 
-    private options(_options:any[]){
-        _options.forEach(op => this.app.options(op));
-    }
+    // private options(_options:any[]){
+    //     _options.forEach(op => this.app.options(op));
+    // }
 
     public addMiddleWare(middleWare: any) {
         this.app.use(middleWare);
@@ -64,7 +64,7 @@ export class App {
     */
     public mongoDB(uri: string) {
         const connect = () => {
-            const options: mongoose.ConnectOptions = { keepAlive: true };
+            // const options: mongoose.ConnectOptions = { keepAlive: true };
             mongoose.connect(uri).then(() => {
                 console.log('DB connected successfully');
             }).catch((error) => {
