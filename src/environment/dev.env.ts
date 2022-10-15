@@ -7,7 +7,7 @@ const development_environment_variables: IEnv =  {
     apiPath: '/api',
     staticPath: '/public',
     db: {
-        // add localhost mongodb details.
+        // we are adding localhost mongodb details.
         name: '',
         user:'',
         pw: '',
