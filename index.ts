@@ -1,7 +1,7 @@
 import { env } from "./src/env";
 import { App } from "./src/app";
 import { __middleware } from "./src/middleware";
-import { allRoutes } from "./src/Task_Registration/index";
+import { allRoutes } from "./src/route";
 
 const dotenv = require('dotenv');
 dotenv.config()
