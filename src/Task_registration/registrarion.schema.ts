@@ -11,7 +11,7 @@ export const RegistrationValidator = z.object({
       }),
     address: z.object({
         address: z.string().min(2, {message: 'must'}),
-        line1: z.string().min(2, {message: ''}),
+        line1: z.string().min(2, {message: 'mandatory'}),
         state: z.string().min(2, {message: 'mandatory'}),
         pincode: z.number().min(8, {message: 'mandatory'})
     }),
@@ -44,7 +44,6 @@ const registrationSchema = new Schema<IRegistration>({
         },
         require: true,
     },
-    
     address: {
         type: Object,
         line1: {
