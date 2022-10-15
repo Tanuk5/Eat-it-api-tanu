@@ -51,7 +51,6 @@ export class App {
         for(const _routeKey in routes){
             this.app.use(`${this.apiPath}/${_routeKey}`, routes[_routeKey]);
         }
-      
     }
 
     /* Enable express to serve up static assets*/
@@ -73,12 +72,9 @@ export class App {
                 return process.exit(1);
             });
         };
-        
         connect();
-
         mongoose.connection.on("disconnected", connect);
     }
-
     public listen() {
         this.app.listen(this.port, () => {
             console.log(`[${env().stage}] - Server started at http://localhost:${this.port}${this.apiPath}`);

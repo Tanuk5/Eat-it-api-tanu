@@ -18,5 +18,4 @@ try {
   console.log(e);
   console.log("Failed to create DB Connection string");
 }
-
 app.listen();
