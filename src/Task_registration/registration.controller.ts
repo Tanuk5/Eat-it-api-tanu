@@ -1,6 +1,6 @@
 
 import { BaseController } from "../base_controller";
-import { IRegistration, Registration } from "./registrarion.schema";
+import { IRegistration, Registration } from "./registration.schema";
 
 class RegistrationController extends BaseController<IRegistration> {}
 

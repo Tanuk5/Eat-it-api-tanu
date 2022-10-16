@@ -70,3 +70,21 @@ const registrationSchema = new Schema<IRegistration>({
 });
 
 export const Registration = model<IRegistration>("Registration", registrationSchema);
+
+// {
+//     "name":"tanu",
+//     "phone": "2345553",
+//     "email":[
+//           {
+//         "username":"tanu kumaari",
+//         "password":"123"
+//     }
+//     ],
+//     "address":[
+//          {
+//              "line1": "GP 2-kalka ji",
+//              "state": "ND",
+//              "pincode":"110019"
+//          }
+//      ]
+// }
