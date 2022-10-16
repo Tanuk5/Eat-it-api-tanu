@@ -5,15 +5,14 @@ export const RegistrationValidator = z.object({
     name: z.string().min(2).max(50).trim(),
     phone: z.number().min(10),
     email: z.object({
-        email: z.string().email({ message: 'Must be a valid email' }),
+        id: z.string().min(4, { message: 'Must be a valid email' }),
         username: z.string().min(2, { message: 'user name is require'}),
         password: z.string().min(8, { message: 'Too short' })
       }),
     address: z.object({
-        address: z.string().min(2, {message: 'must'}),
-        line1: z.string().min(2, {message: 'mandatory'}),
+        line1: z.string().min(1, {message: 'mandatory'}),
         state: z.string().min(2, {message: 'mandatory'}),
-        pincode: z.number().min(8, {message: 'mandatory'})
+        pincode: z.number().min(6, {message: 'mandatory'})
     }),
     isDeleted: z.boolean().default(false).optional()
 });
@@ -32,8 +31,11 @@ const registrationSchema = new Schema<IRegistration>({
         required: true
     },
     email: {
-        type: String,
-        required: true,
+        type: Object,
+        id:{
+            type: String,
+            required: true,
+        },
         username: {
             type: String,
             required: true,
@@ -72,17 +74,18 @@ const registrationSchema = new Schema<IRegistration>({
 export const Registration = model<IRegistration>("Registration", registrationSchema);
 
 // {
-//     "name":"tanu",
+//     "name":"tanya",
 //     "phone": "2345553",
 //     "email":[
-//           {
-//         "username":"tanu kumaari",
-//         "password":"123"
+//     {
+//        "id": "tanya@123",
+//        "username":"tanya",
+//        "password":"123"
 //     }
 //     ],
 //     "address":[
 //          {
-//              "line1": "GP 2-kalka ji",
+//              "line1": "GK - 2",
 //              "state": "ND",
 //              "pincode":"110019"
 //          }

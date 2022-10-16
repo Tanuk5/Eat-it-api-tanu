@@ -2,7 +2,7 @@ import { IEnv } from "../Eat-It.types"
 
 const development_environment_variables: IEnv =  {
     stage: process.env.ENVIRONMENT || 'development',
-    port: 8082,
+    port: 8081,
     domain:'',
     apiPath: '/api',
     staticPath: '/public',
